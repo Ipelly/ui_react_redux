@@ -1,0 +1,1 @@
+export const LOAD_STOCK_SUCCESS = "LOAD_STOCK_SUCCESS";
