@@ -8,7 +8,7 @@ export function loadStocksSuccess(stocks){
 export const loadStocks = (symbol) => async dispatch => {
   try{
     let res = await stockService.fetchStocks(symbol);
-    if(res === undefined) {
+    /*if(res === undefined) {
       res = symbol == 'aapl' ? {
         "symbol": "AAPL",
         "sector": "technologyhardwareequipment",
@@ -38,20 +38,9 @@ export const loadStocks = (symbol) => async dispatch => {
             "volume": 650107,
             "marketPercent": 0.02115
           };
-    }
+    }*/
     dispatch(loadStocksSuccess(res));
   } catch(error) {
     throw error;
   }
-
-  // return function(dispatch) {
-  //   return stockService
-  //     .fetchStocks()
-  //     .then(res => {
-  //       dispatch(loadStocksSuccess(res));
-  //     })
-  //     .catch(error => {
-  //       throw error;
-  //     });
-  // };
 }
